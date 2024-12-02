@@ -18,12 +18,21 @@
             <region id="carnesRegion" left="10%" top="35%" width="30%" height="50%" zIndex="2"/>
             <region id="vegetaisRegion" left="40%" top="35%" width="30%" height="50%" zIndex="2"/>
             <region id="limpezaRegion" left="70%" top="35%" width="30%" height="50%" zIndex="2"/>
-
+            <!--REGIAO DOS SUBPRODUTOS CARNE-->
             <region id="picanhaRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
             <region id="linguicaRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
             <region id="frangoRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
             <region id="suinoRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
-            
+            <!--REGIAO DOS SUBPRODUTOS VEGETAIS-->
+            <region id="alfaceRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="cebolaRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="brocolisRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="cenouraRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <!--REGIAO DOS SUBPRODUTOS LIMPEZA-->
+            <region id="cloroRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="detergenteRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="esponjaRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="alcoolRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
         </regionBase>
 
         <descriptorBase>
@@ -41,7 +50,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-
             <descriptor id="vegetaisDescriptor" region="vegetaisRegion" 
                 focusIndex="2"
                 moveRight="3" 
@@ -50,7 +58,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-
             <descriptor id="limpezaDescriptor" region="limpezaRegion" 
                 focusIndex="3"
                 moveRight="3" 
@@ -59,7 +66,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-
             <descriptor id="voltaDescriptor" region="voltaRegion" 
                 focusIndex="9" 
                 moveUp="9" 
@@ -76,7 +82,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            
             <descriptor id="linguicaDescriptor" region="linguicaRegion" 
                 focusIndex="2"
                 moveRight="3" 
@@ -85,8 +90,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-
-
             <descriptor id="frangoDescriptor" region="frangoRegion" 
                 focusIndex="3"
                 moveRight="4" 
@@ -95,7 +98,6 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            
             <descriptor id="suinoDescriptor" region="suinoRegion" 
                 focusIndex="4"
                 moveRight="4" 
@@ -104,7 +106,74 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-
+            
+            <!-- Descritores do submenu VEGETAIS-->
+            <descriptor id="alfaceDescriptor" region="alfaceRegion" 
+                focusIndex="1"
+                moveRight="2" 
+                moveLeft="1" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="cebolaDescriptor" region="cebolaRegion" 
+                focusIndex="2"
+                moveRight="3" 
+                moveLeft="1" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="brocolisDescriptor" region="brocolisRegion" 
+                focusIndex="3"
+                moveRight="4" 
+                moveLeft="2" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="cenouraDescriptor" region="cenouraRegion" 
+                focusIndex="4"
+                moveRight="4" 
+                moveLeft="3" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            
+            <!-- Descritores do submenu LIMPEZA-->
+            <descriptor id="cloroDescriptor" region="cloroRegion" 
+                focusIndex="1"
+                moveRight="2" 
+                moveLeft="1" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="detergenteDescriptor" region="detergenteRegion" 
+                focusIndex="2"
+                moveRight="3" 
+                moveLeft="1" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="esponjaDescriptor" region="esponjaRegion" 
+                focusIndex="3"
+                moveRight="4" 
+                moveLeft="2" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="alcoolDescriptor" region="alcoolRegion" 
+                focusIndex="4"
+                moveRight="4" 
+                moveLeft="3" 
+                moveUp="9" 
+                moveDown="1"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
         </descriptorBase>
 
     </head>
@@ -120,11 +189,26 @@
         <media id="carneId" src="./media/carnes.png" descriptor="carnesDescriptor"/>
         <media id="vegetalId" src="./media/vegetais.png" descriptor="vegetaisDescriptor"/>
         <media id="limpezaId" src="./media/limpeza.png" descriptor="limpezaDescriptor"/>
+        
         <!--PRODUTOS DA CATEGORIA DA CARNE -->
-        <media id="picanhaId" src="./media/picanha.jpg" descriptor="picanhaDescriptor"/>
-        <media id="linguicaId" src="./media/linguica.jpg" descriptor="linguicaDescriptor"/>
-        <media id="frangoId" src="./media/frango.jpg" descriptor="frangoDescriptor"/>
-        <media id="suinoId" src="./media/suino.jpg" descriptor="suinoDescriptor"/>
+        <media id="picanhaId" src="./media/carnes/picanha.jpg" descriptor="picanhaDescriptor"/>
+        <media id="linguicaId" src="./media/carnes/linguica.jpg" descriptor="linguicaDescriptor"/>
+        <media id="frangoId" src="./media/carnes/frango.jpg" descriptor="frangoDescriptor"/>
+        <media id="suinoId" src="./media/carnes/suino.jpg" descriptor="suinoDescriptor"/>
+
+        <!--PRODUTOS DA CATEGORIA DE VEGETAIS -->
+        <media id="alfaceId" src="./media/vegetais/alface.jpg" descriptor="alfaceDescriptor"/>
+        <media id="cebolaId" src="./media/vegetais/cebola.jpg" descriptor="cebolaDescriptor"/>
+        <media id="brocolisId" src="./media/vegetais/brocolis.jpg" descriptor="brocolisDescriptor"/>
+        <media id="cenouraId" src="./media/vegetais/cenoura.jpg" descriptor="cenouraDescriptor"/>
+
+        <!--PRODUTOS DA CATEGORIA DE LIMPEZA -->
+        <media id="cloroId" src="./media/limpeza/cloro.jpg" descriptor="cloroDescriptor"/>
+        <media id="detergenteId" src="./media/limpeza/detergente.jpg" descriptor="detergenteDescriptor"/>
+        <media id="esponjaId" src="./media/limpeza/esponja.jpg" descriptor="esponjaDescriptor"/>
+        <media id="alcoolId" src="./media/limpeza/alcool.jpg" descriptor="alcoolDescriptor"/>
+
+        
         <!-- Links para exibição inicial -->
         <link xconnector="conn#onBeginStart">
             <bind role="onBegin" component="backgroundId"/>
