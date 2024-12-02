@@ -241,6 +241,13 @@
             <bind component="voltarId" role="start" />
             <bind component="vegetalBackgroundId" role="start" />
             <bind component="backgroundId" role="stop" />
+            <bind component="carneId" role="stop" />
+            <bind component="vegetalId" role="stop" />
+            <bind component="limpezaId" role="stop" />
+            <bind component="alfaceId" role="start" />
+            <bind component="cebolaId" role="start" />
+            <bind component="brocolisId" role="start" />
+            <bind component="cenouraId" role="start" />
         </link>
         <!-- AO SELECIONAR O MENU DE LIMPEZA -->
         <link xconnector="conn#onSelectionStartStop">
@@ -248,6 +255,13 @@
             <bind component="voltarId" role="start" />
             <bind component="limpezaBackgroundId" role="start" />
             <bind component="backgroundId" role="stop" />
+            <bind component="carneId" role="stop" />
+            <bind component="vegetalId" role="stop" />
+            <bind component="limpezaId" role="stop" />
+            <bind component="cloroId" role="start" />
+            <bind component="detergenteId" role="start" />
+            <bind component="esponjaId" role="start" />
+            <bind component="alcoolId" role="start" />
         </link>
 
         <!-- AO SELECIONAR O MENU DE VOLTAR -->
@@ -268,6 +282,19 @@
             <bind component="suinoId" role="stop" />
             <bind component="frangoId" role="stop" />
             <bind component="linguicaId" role="stop" />
+
+            <!-- REMOVER COMPONENTES DO SUBMENU VEGETAIS -->
+            <bind component="alfaceId" role="stop" />
+            <bind component="cebolaId" role="stop" />
+            <bind component="brocolisId" role="stop" />
+            <bind component="cenouraId" role="stop" />
+            
+
+            <!-- REMOVER COMPONENTES DO SUBMENU LIMPEZA -->
+            <bind component="cloroId" role="stop" />
+            <bind component="detergenteId" role="stop" />
+            <bind component="esponjaId" role="stop" />
+            <bind component="alcoolId" role="stop" />
         </link>
 
     </body>
