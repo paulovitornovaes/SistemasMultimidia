@@ -14,25 +14,26 @@
             <region id="vegetalBackgroundReg" width="100%" height="100%" zIndex="1"/>
             <region id="limpezaBackgroundReg" width="100%" height="100%" zIndex="1"/>
 
-            <region id="voltaRegion" left="85%" top="2%" width="20%" height="20%" zIndex="2"/>
-            <region id="carnesRegion" left="10%" top="35%" width="30%" height="50%" zIndex="2"/>
-            <region id="vegetaisRegion" left="40%" top="35%" width="30%" height="50%" zIndex="2"/>
-            <region id="limpezaRegion" left="70%" top="35%" width="30%" height="50%" zIndex="2"/>
+            <region id="carrinhoRegion" left="10%" top="10%" width="120px" height="50px" zIndex="2"/>
+            <region id="voltaRegion" left="80%" top="10%" width="70px" height="35px" zIndex="2"/>
+            <region id="carnesRegion" left="10%" top="50%" width="140px" height="70px" zIndex="2"/>
+            <region id="vegetaisRegion" left="40%" top="50%" width="140px" height="70px" zIndex="2"/>
+            <region id="limpezaRegion" left="70%" top="50%" width="140px" height="70px" zIndex="2"/>
             <!--REGIAO DOS SUBPRODUTOS CARNE-->
-            <region id="picanhaRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="linguicaRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="frangoRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="suinoRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="picanhaRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="linguicaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="frangoRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="suinoRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
             <!--REGIAO DOS SUBPRODUTOS VEGETAIS-->
-            <region id="alfaceRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="cebolaRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="brocolisRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="cenouraRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="alfaceRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="cebolaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="brocolisRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="cenouraRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
             <!--REGIAO DOS SUBPRODUTOS LIMPEZA-->
-            <region id="cloroRegion" left="15%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="detergenteRegion" left="35%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="esponjaRegion" left="55%" top="35%" width="15%" height="15%" zIndex="2"/>
-            <region id="alcoolRegion" left="75%" top="35%" width="15%" height="15%" zIndex="2"/>
+            <region id="cloroRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="detergenteRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
         </regionBase>
 
         <descriptorBase>
@@ -67,9 +68,17 @@
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
             <descriptor id="voltaDescriptor" region="voltaRegion" 
+                focusIndex="10" 
+                moveUp="10" 
+                moveDown="1"
+                moveLeft="9"
+                focusBorderColor="yellow" 
+                focusBorderWidth="5"/>
+            <descriptor id="carrinhoDescriptor" region="carrinhoRegion" 
                 focusIndex="9" 
                 moveUp="9" 
                 moveDown="1"
+                moveRight="10"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
 
@@ -185,6 +194,7 @@
         <media id="carneBackgroundId" src="./media/carnes.mp4" descriptor="carneBackgroundDesc"/>
         <media id="vegetalBackgroundId" src="./media/vegetais.mp4" descriptor="vegetalBackgroundDesc"/>
         <media id="limpezaBackgroundId" src="./media/limpeza.mp4" descriptor="limpezaBackgroundDesc"/>
+        <media id="carrinhoId" src="./media/carrinho.png" descriptor="carrinhoDescriptor" />
         <media id="voltarId" src="./media/voltar.png" descriptor="voltaDescriptor" />
         <media id="carneId" src="./media/carnes.png" descriptor="carnesDescriptor"/>
         <media id="vegetalId" src="./media/vegetais.png" descriptor="vegetaisDescriptor"/>
@@ -215,6 +225,7 @@
             <bind role="start" component="carneId"/>
             <bind role="start" component="vegetalId"/>
             <bind role="start" component="limpezaId"/>
+            <bind role="start" component="carrinhoId"/>
         </link>
         <link xconnector="conn#onEndStart">
             <bind component="backgroundId" role="onEnd" />
