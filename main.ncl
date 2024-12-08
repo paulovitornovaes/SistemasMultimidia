@@ -9,41 +9,45 @@
 
         <regionBase>
                    
-            <region id="backgroundReg" width="100%" height="100%" zIndex="1"/>
-            <region id="carneBackgroundReg" width="100%" height="100%" zIndex="1"/>
-            <region id="vegetalBackgroundReg" width="100%" height="100%" zIndex="1"/>
-            <region id="limpezaBackgroundReg" width="100%" height="100%" zIndex="1"/>
+            <region id="backgroundReg"         width="100%"  height="100%" zIndex="1">
+                <region id="carnesRegion"      width="140px" height="70px" left="10%"  top="50%"   zIndex="2"/>
+                <region id="vegetaisRegion"    width="140px" height="70px" left="40%"  top="50%"   zIndex="2"/>
+                <region id="limpezaRegion"     width="140px" height="70px" left="70%"  top="50%"   zIndex="2"/>
+            </region>
 
-            <region id="carrinhoRegion" left="10%" top="10%" width="120px" height="50px" zIndex="2"/>
-            <region id="voltaRegion" left="80%" top="10%" width="70px" height="35px" zIndex="2"/>
-            <region id="carnesRegion" left="10%" top="50%" width="140px" height="70px" zIndex="2"/>
-            <region id="vegetaisRegion" left="40%" top="50%" width="140px" height="70px" zIndex="2"/>
-            <region id="limpezaRegion" left="70%" top="50%" width="140px" height="70px" zIndex="2"/>
-            <!--REGIAO DOS SUBPRODUTOS CARNE-->
-            <region id="picanhaRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="linguicaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="frangoRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="suinoRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <!--REGIAO DOS SUBPRODUTOS VEGETAIS-->
-            <region id="alfaceRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="cebolaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="brocolisRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="cenouraRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <!--REGIAO DOS SUBPRODUTOS LIMPEZA-->
-            <region id="cloroRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="detergenteRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2"/>
-            <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2"/>
+            <region id="carrinhoRegion"       left="10%" top="10%" width="120px" height="50px" zIndex="2"/>
+            <region id="voltaRegion"          left="80%" top="10%" width="70px"  height="35px" zIndex="2"/>
+
+            <region id="carneBackgroundReg"   width="100%" height="100%" zIndex="1">
+                <region id="picanhaRegion"    left="15%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="linguicaRegion"   left="35%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="frangoRegion"     left="55%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="suinoRegion"      left="75%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+            </region>
+
+            <region id="vegetalBackgroundReg" width="100%" height="100%" zIndex="1">
+                <region id="alfaceRegion"     left="15%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="cebolaRegion"     left="35%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="brocolisRegion"   left="55%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+                <region id="cenouraRegion"    left="75%" top="50%" width="15%"   height="15%"  zIndex="2"/>
+            </region>
+            <region id="limpezaBackgroundReg" width="100%" height="100%" zIndex="1">
+                <region id="cloroRegion"      left="15%" top="50%" width="15%"   height="15%" zIndex="2"/>
+                <region id="detergenteRegion" left="35%" top="50%" width="15%"   height="15%" zIndex="2"/>
+                <region id="esponjaRegion"    left="55%" top="50%" width="15%"   height="15%" zIndex="2"/>
+                <region id="alcoolRegion"     left="75%" top="50%" width="15%"   height="15%" zIndex="2"/>
+            </region>
+            
         </regionBase>
 
         <descriptorBase>
             
-            <descriptor id="backgroundDesc" region="backgroundReg" />
-            <descriptor id="carneBackgroundDesc" region="carneBackgroundReg" />
-            <descriptor id="vegetalBackgroundDesc" region="vegetalBackgroundReg" />
-            <descriptor id="limpezaBackgroundDesc" region="limpezaBackgroundReg" />
+            <descriptor id="backgroundDesc"          region="backgroundReg" />
+            <descriptor id="carneBackgroundDesc"     region="carneBackgroundReg" />
+            <descriptor id="vegetalBackgroundDesc"   region="vegetalBackgroundReg" />
+            <descriptor id="limpezaBackgroundDesc"   region="limpezaBackgroundReg" />
             
-            <descriptor id="carnesDescriptor" region="carnesRegion" 
+            <descriptor id="carnesDescriptor"        region="carnesRegion" 
                 focusIndex="1" 
                 moveRight="2" 
                 moveLeft="1"
@@ -51,7 +55,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="vegetaisDescriptor" region="vegetaisRegion" 
+            <descriptor id="vegetaisDescriptor"      region="vegetaisRegion" 
                 focusIndex="2"
                 moveRight="3" 
                 moveLeft="1" 
@@ -59,7 +63,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="limpezaDescriptor" region="limpezaRegion" 
+            <descriptor id="limpezaDescriptor"       region="limpezaRegion" 
                 focusIndex="3"
                 moveRight="3" 
                 moveLeft="2" 
@@ -67,14 +71,14 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="voltaDescriptor" region="voltaRegion" 
+            <descriptor id="voltaDescriptor"         region="voltaRegion" 
                 focusIndex="10" 
                 moveUp="10" 
                 moveDown="1"
                 moveLeft="9"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="carrinhoDescriptor" region="carrinhoRegion" 
+            <descriptor id="carrinhoDescriptor"      region="carrinhoRegion" 
                 focusIndex="9" 
                 moveUp="9" 
                 moveDown="1"
@@ -83,7 +87,7 @@
                 focusBorderWidth="5"/>
 
             <!-- Descritores do submenu CARNE-->
-            <descriptor id="picanhaDescriptor" region="picanhaRegion" 
+            <descriptor id="picanhaDescriptor"       region="picanhaRegion" 
                 focusIndex="1"
                 moveRight="2" 
                 moveLeft="1" 
@@ -91,7 +95,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="linguicaDescriptor" region="linguicaRegion" 
+            <descriptor id="linguicaDescriptor"      region="linguicaRegion" 
                 focusIndex="2"
                 moveRight="3" 
                 moveLeft="1" 
@@ -99,7 +103,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="frangoDescriptor" region="frangoRegion" 
+            <descriptor id="frangoDescriptor"        region="frangoRegion" 
                 focusIndex="3"
                 moveRight="4" 
                 moveLeft="2" 
@@ -107,7 +111,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="suinoDescriptor" region="suinoRegion" 
+            <descriptor id="suinoDescriptor"         region="suinoRegion" 
                 focusIndex="4"
                 moveRight="4" 
                 moveLeft="3" 
@@ -117,7 +121,7 @@
                 focusBorderWidth="5"/>
             
             <!-- Descritores do submenu VEGETAIS-->
-            <descriptor id="alfaceDescriptor" region="alfaceRegion" 
+            <descriptor id="alfaceDescriptor"        region="alfaceRegion" 
                 focusIndex="1"
                 moveRight="2" 
                 moveLeft="1" 
@@ -125,7 +129,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="cebolaDescriptor" region="cebolaRegion" 
+            <descriptor id="cebolaDescriptor"        region="cebolaRegion" 
                 focusIndex="2"
                 moveRight="3" 
                 moveLeft="1" 
@@ -133,7 +137,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="brocolisDescriptor" region="brocolisRegion" 
+            <descriptor id="brocolisDescriptor"      region="brocolisRegion" 
                 focusIndex="3"
                 moveRight="4" 
                 moveLeft="2" 
@@ -141,7 +145,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="cenouraDescriptor" region="cenouraRegion" 
+            <descriptor id="cenouraDescriptor"       region="cenouraRegion" 
                 focusIndex="4"
                 moveRight="4" 
                 moveLeft="3" 
@@ -151,7 +155,7 @@
                 focusBorderWidth="5"/>
             
             <!-- Descritores do submenu LIMPEZA-->
-            <descriptor id="cloroDescriptor" region="cloroRegion" 
+            <descriptor id="cloroDescriptor"         region="cloroRegion" 
                 focusIndex="1"
                 moveRight="2" 
                 moveLeft="1" 
@@ -159,7 +163,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="detergenteDescriptor" region="detergenteRegion" 
+            <descriptor id="detergenteDescriptor"    region="detergenteRegion" 
                 focusIndex="2"
                 moveRight="3" 
                 moveLeft="1" 
@@ -167,7 +171,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="esponjaDescriptor" region="esponjaRegion" 
+            <descriptor id="esponjaDescriptor"       region="esponjaRegion" 
                 focusIndex="3"
                 moveRight="4" 
                 moveLeft="2" 
@@ -175,7 +179,7 @@
                 moveDown="1"
                 focusBorderColor="yellow" 
                 focusBorderWidth="5"/>
-            <descriptor id="alcoolDescriptor" region="alcoolRegion" 
+            <descriptor id="alcoolDescriptor"        region="alcoolRegion" 
                 focusIndex="4"
                 moveRight="4" 
                 moveLeft="3" 
@@ -188,6 +192,7 @@
     </head>
 
     <body>
+    
         <port id="entry" component="backgroundId"/>
 
         <media id="backgroundId" src="./media/background.mp4" descriptor="backgroundDesc"/>
