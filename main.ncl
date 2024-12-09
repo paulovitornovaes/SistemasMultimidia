@@ -36,7 +36,7 @@
                 <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
                 <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
             </region>
-            <region id="changesReg" left="10%" top="10%" width="120px" height="50px" zIndex="4"/>
+            <region id="changesReg" left="10%" top="10%" width="170px" height="50px" zIndex="4"/>
         </regionBase>
         <descriptorBase>
             <descriptor id="backgroundDesc" region="backgroundReg" />
@@ -215,8 +215,75 @@
         <link xconnector="conn#onSelectionSet_var">
             <bind role="onSelection" component="picanhaId"/>
             <bind role="set" component="changes" interface="add">
-            <bindParam name="var" value="100"/>
+                <bindParam name="var" value="100"/>
             </bind>
         </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="suinoId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="50"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="frangoId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="20"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="linguicaId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="15"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="alfaceId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="5"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="cebolaId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="7.50"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="brocolisId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="8.99"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="cenouraId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="7.99"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="cloroId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="10.99"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="detergenteId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="3.19"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="esponjaId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="1.99"/>
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="alcoolId"/>
+            <bind role="set" component="changes" interface="add">
+                <bindParam name="var" value="7.99"/>
+            </bind>
+        </link>
+
     </body>
 </ncl>
