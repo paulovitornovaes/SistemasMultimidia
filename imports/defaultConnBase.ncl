@@ -149,11 +149,7 @@ Revision: 17/09/2012
 
       <!-- OnMouseSelection -->
 
-      <causalConnector id="onSelectionStart">
-        <connectorParam name="user" />
-        <simpleCondition role="onSelection" user="$var" />
-        <simpleAction role="start" max="unbounded" />
-      </causalConnector>
+
 
       <causalConnector id="onSelectionStart_delay">
         <connectorParam name="delay" />
@@ -858,6 +854,10 @@ Revision: 17/09/2012
 
 
       <!-- OnMouseSelection multiple actions -->
+      <causalConnector id="onSelectionStart">
+          <simpleCondition role="onSelection" />
+          <simpleAction role="start" />
+      </causalConnector>
 
       <causalConnector id="onSelectionStartStop">
           <simpleCondition role="onSelection" />
@@ -877,17 +877,8 @@ Revision: 17/09/2012
         </compoundAction>
       </causalConnector>
 
-      <causalConnector id="onSelectionSet">
-        <connectorParam name="user" />
-        <simpleCondition role="onSelection" user="$user" />
-        <simpleAction role="set" value="$user" />
-      </causalConnector>
 
-      <causalConnector id="onSelectionSetMedia">
-        <connectorParam name="user" />
-        <simpleCondition role="onSelection" user="$user" />
-        <simpleAction role="set" value="$user" />
-      </causalConnector>
+
 
 
       <causalConnector id="onSelectionStart_delay1Stop_delay2">
@@ -1896,117 +1887,14 @@ Revision: 17/09/2012
         </compoundAction>
       </causalConnector>
       <!--Handpose-->
-      <causalConnector id="onHandPoseRecognitionPauseStop">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <compoundAction operator="seq">
-          <simpleAction role="pause" />
-          <simpleAction role="stop" />
-        </compoundAction>
-      </causalConnector>
+    
 
-      <causalConnector id="onHandPoseRecognitionResumeStart">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <compoundAction operator="seq">
-          <simpleAction role="resume" />
-          <simpleAction role="start" />
-        </compoundAction>
-      </causalConnector>
-
-      <causalConnector id="onHandPoseRecognitionPause">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <simpleAction role="pause" max="unbounded" />
-      </causalConnector>
-
-      <causalConnector id="onHandPoseRecognitionResume">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <simpleAction role="resume" max="unbounded" />
-      </causalConnector>
-
-      <causalConnector id="onHandPoseRecognitionStart">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <simpleAction role="start" />
-      </causalConnector>
-
-      <causalConnector id="onHandPoseRecognitionStop">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <simpleAction role="stop" />
-      </causalConnector>
-
-      <causalConnector id="onHandPoseRecognitionStopStart">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onHandPoseRecognition" key="$key" user="$user" />
-        <compoundAction operator="seq">
-          <simpleAction role="stop" />
-          <simpleAction role="start" />
-        </compoundAction>
-      </causalConnector>
 
       <!--Voice
       Recognition-->
-      <causalConnector id="onVoiceRecognitionStart">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onVoiceRecognition" key="$key" user="$user" />
-        <simpleAction role="start" max="unbounded" />
-      </causalConnector>
+     
 
-      <causalConnector id="onVoiceRecognitionStop">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onVoiceRecognition" key="$key" user="$user" />
-        <simpleAction role="stop" />
-      </causalConnector>
-
-      <causalConnector id="onVoiceRecognitionPause">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onVoiceRecognition" key="$key" user="$user" />
-        <simpleAction role="pause" max="unbounded" />
-      </causalConnector>
-
-      <causalConnector id="onVoiceRecognitionResume">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onVoiceRecognition" key="$key" user="$user" />
-        <simpleAction role="resume" max="unbounded" />
-      </causalConnector>
-
-      <causalConnector id="onVoiceRecognitionStartStop">
-        <connectorParam name="key" />
-        <connectorParam name="user" />
-        <simpleCondition role="onVoiceRecognition" key="$key" user="$user" />
-        <compoundAction operator="seq">
-          <simpleAction role="start" />
-          <simpleAction role="stop" />
-        </compoundAction>
-      </causalConnector>
-
-      <causalConnector id="onVoiceRecognitionTestSet">
-        <connectorParam name="key" />
-        <connectorParam name="var" />
-        <compoundCondition operator="and">
-          <simpleCondition role="onVoiceRecognition" key="$key" />
-          <assessmentStatement comparator="eq">
-            <attributeAssessment role="test" eventType="attribution"/>
-            <valueAssessment value="0" />
-          </assessmentStatement>
-        </compoundCondition>
-        <simpleAction role="set" value="$var" />
-      </causalConnector>
-
+      
       <causalConnector id="onSelectionTestSet">
         <connectorParam name="testVar" />
         <connectorParam name="setVar" />

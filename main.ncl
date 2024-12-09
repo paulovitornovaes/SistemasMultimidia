@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ncl xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml-model href="http://www.ncl.org.br/NCL4.0/profiles/NCL40.xsd"?>
+<ncl id = "main" xmlns="http://www.ncl.org.br/NCL4.0/NCL4Profile">
+
     <head>
         <connectorBase id="connBaseId">
             <importBase alias="conn" documentURI="./imports/defaultConnBase.ncl" />
         </connectorBase>
         <regionBase>
+            <region id="outputRegion" left="10%" top="10%" width="120px" height="50px" zIndex="3"/>
             <region id="backgroundReg" width="100%" height="100%" zIndex="1">
                 <region id="carnesRegion" width="140px" height="70px" left="10%" top="50%"
                     zIndex="2" />
@@ -35,6 +36,7 @@
                 <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
                 <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
             </region>
+            <region id="changesReg" left="10%" top="10%" width="120px" height="50px" zIndex="4"/>
         </regionBase>
         <descriptorBase>
             <descriptor id="backgroundDesc" region="backgroundReg" />
@@ -53,7 +55,7 @@
                 moveDown="1" moveRight="10" focusBorderColor="yellow" focusBorderWidth="5" />
             <!-- Descritores do submenu CARNE -->
             <descriptor id="picanhaDescriptor" region="picanhaRegion" focusIndex="1" moveRight="2"
-                moveLeft="1" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
+                moveLeft="90" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
             <descriptor id="linguicaDescriptor" region="linguicaRegion" focusIndex="2" moveRight="3"
                 moveLeft="1" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
             <descriptor id="frangoDescriptor" region="frangoRegion" focusIndex="3" moveRight="4"
@@ -79,9 +81,18 @@
                 moveLeft="2" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
             <descriptor id="alcoolDescriptor" region="alcoolRegion" focusIndex="4" moveRight="4"
                 moveLeft="3" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
+            <descriptor id="outputDescriptor" region="outputRegion" focusIndex="90" focusBorderColor="yellow" focusBorderWidth="5"/>
+            <descriptor id="changesDesc" region="changesReg"/>
         </descriptorBase>
     </head>
     <body>
+        <port id="pNCLua" component="changes"/>
+        <media id="changes" src="./scripts/contador.lua" descriptor="changesDesc">
+            <area id="print" label="fim"/>
+            <property name="add"/>
+        </media>
+        <media id="contadorOutput" src="application/x-lua-draw" descriptor="outputDescriptor"/>
+        <media id="contador" src="./scripts/contador.lua"/>
         <port id="entry" component="backgroundId" />
         <media id="backgroundId" src="./media/background.mp4" descriptor="backgroundDesc" />
         <media id="carneBackgroundId" src="./media/carnes.mp4" descriptor="carneBackgroundDesc" />
@@ -199,6 +210,13 @@
             <bind component="detergenteId" role="stop" />
             <bind component="esponjaId" role="stop" />
             <bind component="alcoolId" role="stop" />
+        </link>
+
+        <link xconnector="conn#onSelectionSet_var">
+            <bind role="onSelection" component="picanhaId"/>
+            <bind role="set" component="changes" interface="add">
+            <bindParam name="var" value="100"/>
+            </bind>
         </link>
     </body>
 </ncl>
