@@ -6,34 +6,60 @@
             <importBase alias="conn" documentURI="./imports/defaultConnBase.ncl" />
         </connectorBase>
         <regionBase>
-            <region id="backgroundReg"  width="100%" height="100%" zIndex="1">
+            <region id="backgroundReg"  width="100%" height="100%" zIndex="2">
                 <region id="carnesRegion" width="140px" height="70px" left="10%" top="50%"
-                    zIndex="2" />
+                    zIndex="3" />
                 <region id="vegetaisRegion" width="140px" height="70px" left="40%" top="50%"
-                    zIndex="2" />
+                    zIndex="3" />
                 <region id="limpezaRegion" width="140px" height="70px" left="70%" top="50%"
-                    zIndex="2" />
+                    zIndex="3" />
             </region>
             <region id="carrinhoRegion" left="0%" top="8%" width="120px" height="50px" zIndex="5" />
-            <region id="voltaRegion" left="80%" top="10%" width="70px" height="35px" zIndex="2" />
+            <region id="voltaRegion" left="80%" top="10%" width="70px" height="35px" zIndex="3" />
+                <region id="picanhaQuantityReg"  left="15%" top="65%" width="15%" height="5%"  />
+                <region id="linguicaQuantityReg" left="35%" top="65%" width="15%" height="5%"  />
+                <region id="frangoQuantityReg" left="55%" top="65%" width="15%" height="5%"  />
+                <region id="suinoQuantityReg" left="75%" top="65%" width="15%" height="5%"  />
             <region id="carneBackgroundReg" width="100%" height="100%" zIndex="1">
-                <region id="picanhaRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="linguicaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="frangoRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="suinoRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
+
+                <region id="picanhaRegion" left="15%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="linguicaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="frangoRegion" left="55%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="suinoRegion" left="75%" top="50%" width="15%" height="15%" zIndex="3"/>
+                
             </region>
-            <region id="vegetalBackgroundReg" width="100%" height="100%" zIndex="1">
-                <region id="alfaceRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="cebolaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="brocolisRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="cenouraRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
+                <region id="alfaceQuantityReg" left="15%" top="65%" width="15%" height="5%"  />
+                <region id="cebolaQuantityReg" left="35%" top="65%" width="15%" height="5%"  />
+                <region id="brocolisQuantityReg" left="55%" top="65%" width="15%" height="5%"  />
+                <region id="cenouraQuantityReg" left="75%" top="65%" width="15%" height="5%"  />
+            <region id="vegetalBackgroundReg" width="100%" height="100%" zIndex="2">
+
+                <region id="alfaceRegion" left="15%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="cebolaRegion" left="35%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="brocolisRegion" left="55%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="cenouraRegion" left="75%" top="50%" width="15%" height="15%" zIndex="3"/>
+
             </region>
+                <region id="cloroQuantityReg" left="15%" top="65%" width="15%" height="5%"  />
+                <region id="detergenteQuantityReg" left="35%" top="65%" width="15%" height="5%"  />
+                <region id="esponjaQuantityReg" left="55%" top="65%" width="15%" height="5%"  />
+                <region id="alcoolQuantityReg" left="75%" top="65%" width="15%" height="5%"  />
             <region id="limpezaBackgroundReg" width="100%" height="100%" zIndex="1">
-                <region id="cloroRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="detergenteRegion" left="35%" top="50%" width="15%" height="15%"
-                    zIndex="2" />
-                <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
-                <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
+
+                <region id="cloroRegion" left="15%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="detergenteRegion" left="35%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="3"/>
+
+                <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="3"/>
+
             </region>
             <region id="changesReg" left="8%" top="11%" width="120px" height="30px" zIndex="4"/>
         </regionBase>
@@ -81,6 +107,21 @@
             <descriptor id="alcoolDescriptor" region="alcoolRegion" focusIndex="4" moveRight="4"
                 moveLeft="3" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
             <descriptor id="changesDesc" region="changesReg"/>
+
+            <!--Descritores de quantidade dos produtos-->
+
+            <descriptor id="picanhaQuantityDesc" region="picanhaQuantityReg" />
+            <descriptor id="linguicaQuantityDesc" region="linguicaQuantityReg" />
+            <descriptor id="frangoQuantityDesc" region="frangoQuantityReg" />
+            <descriptor id="suinoQuantityDesc" region="suinoQuantityReg" />
+            <descriptor id="alfaceQuantityDesc" region="alfaceQuantityReg" />
+            <descriptor id="cebolaQuantityDesc" region="cebolaQuantityReg" />
+            <descriptor id="brocolisQuantityDesc" region="brocolisQuantityReg" />
+            <descriptor id="cenouraQuantityDesc" region="cenouraQuantityReg" />
+            <descriptor id="cloroQuantityDesc" region="cloroQuantityReg" />
+            <descriptor id="detergenteQuantityDesc" region="detergenteQuantityReg" />
+            <descriptor id="esponjaQuantityDesc" region="esponjaQuantityReg" />
+            <descriptor id="alcoolQuantityDesc" region="alcoolQuantityReg" />
         </descriptorBase>
     </head>
     <body>
@@ -126,6 +167,58 @@
             descriptor="detergenteDescriptor" />
         <media id="esponjaId" src="./media/limpeza/esponja.jpg" descriptor="esponjaDescriptor" />
         <media id="alcoolId" src="./media/limpeza/alcool.jpg" descriptor="alcoolDescriptor" />       
+                
+        <!-- Mídias para quantidade com a propriedade "add" -->
+        <media id="picanhaQuantity" src="./scripts/quantidade.lua" descriptor="picanhaQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="linguicaQuantity" src="./scripts/quantidade.lua" descriptor="linguicaQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="frangoQuantity" src="./scripts/quantidade.lua" descriptor="frangoQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="suinoQuantity" src="./scripts/quantidade.lua" descriptor="suinoQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="alfaceQuantity" src="./scripts/quantidade.lua" descriptor="alfaceQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="cebolaQuantity" src="./scripts/quantidade.lua" descriptor="cebolaQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="brocolisQuantity" src="./scripts/quantidade.lua" descriptor="brocolisQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="cenouraQuantity" src="./scripts/quantidade.lua" descriptor="cenouraQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="cloroQuantity" src="./scripts/quantidade.lua" descriptor="cloroQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="detergenteQuantity" src="./scripts/quantidade.lua" descriptor="detergenteQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="esponjaQuantity" src="./scripts/quantidade.lua" descriptor="esponjaQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+        <media id="alcoolQuantity" src="./scripts/quantidade.lua" descriptor="alcoolQuantityDesc">
+            <property name="add" />
+            <property name="zIndex" value="1" />
+        </media>
+
+        
         <!-- Links para exibição inicial -->
         <link xconnector="conn#onBeginStart">
             <bind role="onBegin" component="backgroundId" />
@@ -133,13 +226,27 @@
             <bind role="start" component="vegetalId" />
             <bind role="start" component="limpezaId" />
             <bind role="start" component="carrinhoId" />
+            
+            <bind component="picanhaQuantity" role="start" />
+            <bind component="suinoQuantity" role="start" />
+            <bind component="frangoQuantity" role="start" />
+            <bind component="linguicaQuantity" role="start" />
+            <bind component="alfaceQuantity" role="start" />
+            <bind component="cebolaQuantity" role="start" />
+            <bind component="brocolisQuantity" role="start" />
+            <bind component="cenouraQuantity" role="start" />
+            <bind component="cloroQuantity" role="start" />
+            <bind component="detergenteQuantity" role="start" />
+            <bind component="esponjaQuantity" role="start" />
+            <bind component="alcoolQuantity" role="start" />
         </link>
+     
         <link xconnector="conn#onEndStart">
             <bind component="backgroundId" role="onEnd" />
             <bind component="backgroundId" role="start" />
         </link>
         <!-- AO SELECIONAR O MENU DE CARNES -->
-        <link xconnector="conn#onSelectionStartStop">
+        <link xconnector="conn#onSelectionSetStartStop">
             <bind component="carneId" role="onSelection" />
             <bind component="carneBackgroundId" role="start" />
             <bind component="picanhaId" role="start" />
@@ -147,13 +254,34 @@
             <bind component="frangoId" role="start" />
             <bind component="suinoId" role="start" />
             <bind component="voltarId" role="start" />
+            <bind component="picanhaQuantity" role="resume" />
+            <bind component="suinoQuantity" role="resume" />
+            <bind component="frangoQuantity" role="resume" />
+            <bind component="linguicaQuantity" role="resume" />
             <bind component="backgroundId" role="stop" />
             <bind component="carneId" role="stop" />
             <bind component="vegetalId" role="stop" />
             <bind component="limpezaId" role="stop" />
+
+            <bind component="suinoQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="picanhaQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="frangoQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="linguicaQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
         </link>
         <!-- AO SELECIONAR O MENU DE VEGETAIS -->
-        <link xconnector="conn#onSelectionStartStop">
+        <link xconnector="conn#onSelectionSetStartStop">
             <bind component="vegetalId" role="onSelection" />
             <bind component="voltarId" role="start" />
             <bind component="vegetalBackgroundId" role="start" />
@@ -165,9 +293,26 @@
             <bind component="cebolaId" role="start" />
             <bind component="brocolisId" role="start" />
             <bind component="cenouraId" role="start" />
+
+            <bind component="alfaceQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="cebolaQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="brocolisQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="cenouraQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
         </link>
         <!-- AO SELECIONAR O MENU DE LIMPEZA -->
-        <link xconnector="conn#onSelectionStartStop">
+        <link xconnector="conn#onSelectionSetStartStop">
             <bind component="limpezaId" role="onSelection" />
             <bind component="voltarId" role="start" />
             <bind component="limpezaBackgroundId" role="start" />
@@ -179,9 +324,28 @@
             <bind component="detergenteId" role="start" />
             <bind component="esponjaId" role="start" />
             <bind component="alcoolId" role="start" />
+
+            <bind component="cloroQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="detergenteQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="esponjaQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
+            <bind component="alcoolQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="3" />
+            </bind>
+
+            
         </link>
         <!-- AO SELECIONAR O MENU DE VOLTAR -->
-        <link xconnector="conn#onSelectionStartStop">
+        <link xconnector="conn#onSelectionSetStartStop">
+        
             <bind component="voltarId" role="onSelection" />
             <bind component="carneId" role="stop" />
             <bind component="carneId" role="start" />
@@ -192,21 +356,63 @@
             <bind component="vegetalBackgroundId" role="stop" />
             <bind component="limpezaBackgroundId" role="stop" />
             <bind component="voltarId" role="stop" />
+           
             <!-- REMOVER COMPONENTES DO SUBMENU CARNE -->
             <bind component="picanhaId" role="stop" />
             <bind component="suinoId" role="stop" />
             <bind component="frangoId" role="stop" />
             <bind component="linguicaId" role="stop" />
+
             <!-- REMOVER COMPONENTES DO SUBMENU VEGETAIS -->
             <bind component="alfaceId" role="stop" />
             <bind component="cebolaId" role="stop" />
             <bind component="brocolisId" role="stop" />
             <bind component="cenouraId" role="stop" />
+            
             <!-- REMOVER COMPONENTES DO SUBMENU LIMPEZA -->
             <bind component="cloroId" role="stop" />
             <bind component="detergenteId" role="stop" />
             <bind component="esponjaId" role="stop" />
             <bind component="alcoolId" role="stop" />
+
+             <!--OCULTAR CONTADORES -->
+            <bind component="picanhaQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="suinoQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="frangoQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="linguicaQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="alfaceQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="cebolaQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="brocolisQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="cenouraQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="cloroQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="detergenteQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="esponjaQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="alcoolQuantity" role="set"  interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+           
         </link>
         <!-- AO SELECIONAR O MENU DE FECHAR COMPRA -->
         <link xconnector="conn#onSelectionStartStop">
@@ -224,18 +430,30 @@
             <bind component="suinoId" role="stop" />
             <bind component="frangoId" role="stop" />
             <bind component="linguicaId" role="stop" />
+            <bind component="picanhaQuantity" role="stop" />
+            <bind component="suinoQuantity" role="stop" />
+            <bind component="frangoQuantity" role="stop" />
+            <bind component="linguicaQuantity" role="stop" />
             <!-- REMOVER COMPONENTES DO SUBMENU VEGETAIS -->
             <bind component="alfaceId" role="stop" />
             <bind component="cebolaId" role="stop" />
             <bind component="brocolisId" role="stop" />
             <bind component="cenouraId" role="stop" />
+            <bind component="alfaceQuantity" role="stop" />
+            <bind component="cebolaQuantity" role="stop" />
+            <bind component="brocolisQuantity" role="stop" />
+            <bind component="cenouraQuantity" role="stop" />
             <!-- REMOVER COMPONENTES DO SUBMENU LIMPEZA -->
             <bind component="cloroId" role="stop" />
             <bind component="detergenteId" role="stop" />
             <bind component="esponjaId" role="stop" />
             <bind component="alcoolId" role="stop" />
+            <bind component="cloroQuantity" role="stop" />
+            <bind component="detergenteQuantity" role="stop" />
+            <bind component="esponjaQuantity" role="stop" />
+            <bind component="alcoolQuantity" role="stop" />
         </link>
-
+        <!-- AO COMPRAR UM ITEM-->
         <link xconnector="conn#onSelectionSet_var">
             <bind role="onSelection" component="picanhaId"/>
             <bind role="set" component="changes" interface="add">
@@ -266,7 +484,7 @@
                 <bindParam name="var" value="5"/>
             </bind>
         </link>
-        <!-- AO COMPRAR UM ITEM-->
+        
         <link xconnector="conn#onSelectionSet_var">
             <bind role="onSelection" component="cebolaId"/>
             <bind role="set" component="changes" interface="add">
@@ -311,7 +529,80 @@
         </link>
         
 
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="picanhaId" />
+            <bind component="picanhaQuantity" role="start" />
+            <bind role="set" component="picanhaQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="linguicaId" />
+            <bind component="linguicaQuantity" role="start" />
+            <bind role="set" component="linguicaQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="frangoId" />
+            <bind component="frangoQuantity" role="start" />
+            <bind role="set" component="frangoQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="suinoId" />
+            <bind component="suinoQuantity" role="start" />
+            <bind role="set" component="suinoQuantity" interface="add">
+            </bind>
+        </link>
 
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="alfaceId" />
+            <bind component="alfaceQuantity" role="start" />
+            <bind role="set" component="alfaceQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="cebolaId" />
+            <bind component="cebolaQuantity" role="start" />
+            <bind role="set" component="cebolaQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="brocolisId" />
+            <bind component="brocolisQuantity" role="start" />
+            <bind role="set" component="brocolisQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="cenouraId" />
+            <bind component="cenouraQuantity" role="start" />
+            <bind role="set" component="cenouraQuantity" interface="add">
+            </bind>
+        </link>
+
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="cloroId" />
+            <bind component="cloroQuantity" role="start" />
+            <bind role="set" component="cloroQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="detergenteId" />
+            <bind component="detergenteQuantity" role="start" />
+            <bind role="set" component="detergenteQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="esponjaId" />
+            <bind component="esponjaQuantity" role="start" />
+            <bind role="set" component="esponjaQuantity" interface="add">
+            </bind>
+        </link>
+        <link xconnector="conn#onSelectionStartSet_var">
+            <bind role="onSelection" component="alcoolId" />
+            <bind component="alcoolQuantity" role="start" />
+            <bind role="set" component="alcoolQuantity" interface="add">
+            </bind>
+        </link>
 
 
     </body>
