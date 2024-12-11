@@ -22,7 +22,7 @@ local CLEANUP_R, CLEANUP_G, CLEANUP_B = 0.537, 0.686, 0.490 -- Verde claro (#89A
 
 canvas:attrFont('monospace', 12)
 
-local textX = (WIDTH / 2) + 50
+local textX = (WIDTH / 2)
 local textY = HEIGHT / 2
 local BOX_WIDTH = 200 -- Largura da área onde o texto será exibido
 local BOX_HEIGHT = 50 -- Altura da área onde o texto será exibido

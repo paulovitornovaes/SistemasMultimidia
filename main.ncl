@@ -6,8 +6,7 @@
             <importBase alias="conn" documentURI="./imports/defaultConnBase.ncl" />
         </connectorBase>
         <regionBase>
-            <region id="outputRegion" left="10%" top="10%" width="120px" height="50px" zIndex="3"/>
-            <region id="backgroundReg" width="100%" height="100%" zIndex="1">
+            <region id="backgroundReg"  width="100%" height="100%" zIndex="1">
                 <region id="carnesRegion" width="140px" height="70px" left="10%" top="50%"
                     zIndex="2" />
                 <region id="vegetaisRegion" width="140px" height="70px" left="40%" top="50%"
@@ -15,7 +14,7 @@
                 <region id="limpezaRegion" width="140px" height="70px" left="70%" top="50%"
                     zIndex="2" />
             </region>
-            <region id="carrinhoRegion" left="10%" top="10%" width="120px" height="50px" zIndex="2" />
+            <region id="carrinhoRegion" left="0%" top="8%" width="120px" height="50px" zIndex="5" />
             <region id="voltaRegion" left="80%" top="10%" width="70px" height="35px" zIndex="2" />
             <region id="carneBackgroundReg" width="100%" height="100%" zIndex="1">
                 <region id="picanhaRegion" left="15%" top="50%" width="15%" height="15%" zIndex="2" />
@@ -36,7 +35,7 @@
                 <region id="esponjaRegion" left="55%" top="50%" width="15%" height="15%" zIndex="2" />
                 <region id="alcoolRegion" left="75%" top="50%" width="15%" height="15%" zIndex="2" />
             </region>
-            <region id="changesReg" left="10%" top="10%" width="170px" height="50px" zIndex="4"/>
+            <region id="changesReg" left="8%" top="11%" width="120px" height="30px" zIndex="4"/>
         </regionBase>
         <descriptorBase>
             <descriptor id="backgroundDesc" region="backgroundReg" />
@@ -81,7 +80,6 @@
                 moveLeft="2" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
             <descriptor id="alcoolDescriptor" region="alcoolRegion" focusIndex="4" moveRight="4"
                 moveLeft="3" moveUp="9" moveDown="1" focusBorderColor="yellow" focusBorderWidth="5" />
-            <descriptor id="outputDescriptor" region="outputRegion" focusIndex="90" focusBorderColor="yellow" focusBorderWidth="5"/>
             <descriptor id="changesDesc" region="changesReg"/>
         </descriptorBase>
     </head>
@@ -91,7 +89,6 @@
             <area id="print" label="fim"/>
             <property name="add"/>
         </media>
-        <media id="contadorOutput" src="application/x-lua-draw" descriptor="outputDescriptor"/>
         <media id="contador" src="./scripts/contador.lua"/>
         <port id="entry" component="backgroundId" />
         <media id="backgroundId" src="./media/background.mp4" descriptor="backgroundDesc" />
@@ -128,7 +125,7 @@
         <media id="detergenteId" src="./media/limpeza/detergente.jpg"
             descriptor="detergenteDescriptor" />
         <media id="esponjaId" src="./media/limpeza/esponja.jpg" descriptor="esponjaDescriptor" />
-        <media id="alcoolId" src="./media/limpeza/alcool.jpg" descriptor="alcoolDescriptor" />
+        <media id="alcoolId" src="./media/limpeza/alcool.jpg" descriptor="alcoolDescriptor" />       
         <!-- Links para exibição inicial -->
         <link xconnector="conn#onBeginStart">
             <bind role="onBegin" component="backgroundId" />
@@ -211,6 +208,33 @@
             <bind component="esponjaId" role="stop" />
             <bind component="alcoolId" role="stop" />
         </link>
+        <!-- AO SELECIONAR O MENU DE FECHAR COMPRA -->
+        <link xconnector="conn#onSelectionStartStop">
+            <bind component="carrinhoId" role="onSelection" />
+            <bind component="backgroundId" role="start" />
+            <bind component="voltarId" role="start" />
+            <bind component="carneId" role="stop" />
+            <bind component="vegetalId" role="stop" />
+            <bind component="limpezaId" role="stop" />
+            <bind component="carneBackgroundId" role="stop" />
+            <bind component="vegetalBackgroundId" role="stop" />
+            <bind component="limpezaBackgroundId" role="stop" />
+            <!-- REMOVER COMPONENTES DO SUBMENU CARNE -->
+            <bind component="picanhaId" role="stop" />
+            <bind component="suinoId" role="stop" />
+            <bind component="frangoId" role="stop" />
+            <bind component="linguicaId" role="stop" />
+            <!-- REMOVER COMPONENTES DO SUBMENU VEGETAIS -->
+            <bind component="alfaceId" role="stop" />
+            <bind component="cebolaId" role="stop" />
+            <bind component="brocolisId" role="stop" />
+            <bind component="cenouraId" role="stop" />
+            <!-- REMOVER COMPONENTES DO SUBMENU LIMPEZA -->
+            <bind component="cloroId" role="stop" />
+            <bind component="detergenteId" role="stop" />
+            <bind component="esponjaId" role="stop" />
+            <bind component="alcoolId" role="stop" />
+        </link>
 
         <link xconnector="conn#onSelectionSet_var">
             <bind role="onSelection" component="picanhaId"/>
@@ -242,6 +266,7 @@
                 <bindParam name="var" value="5"/>
             </bind>
         </link>
+        <!-- AO COMPRAR UM ITEM-->
         <link xconnector="conn#onSelectionSet_var">
             <bind role="onSelection" component="cebolaId"/>
             <bind role="set" component="changes" interface="add">
@@ -284,6 +309,10 @@
                 <bindParam name="var" value="7.99"/>
             </bind>
         </link>
+        
+
+
+
 
     </body>
 </ncl>
