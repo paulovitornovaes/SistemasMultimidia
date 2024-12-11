@@ -6,6 +6,10 @@
             <importBase alias="conn" documentURI="./imports/defaultConnBase.ncl" />
         </connectorBase>
         <regionBase>
+            <region id="cliqueReg" left="80%" top="80%" width="10%" height="10%" zIndex="3"/>
+            <region id="finalizarReg" left="33%" top="45%" width="40%" height="30%" zIndex="3"/>
+            <region id="comercialBackgroundReg" width="100%" height="100%" zIndex="2"/>
+            <region id="carrinhoBackgroundReg" width="100%" height="100%" zIndex="2"/>
             <region id="backgroundReg"  width="100%" height="100%" zIndex="2">
                 <region id="carnesRegion" width="140px" height="70px" left="10%" top="50%"
                     zIndex="3" />
@@ -64,6 +68,10 @@
             <region id="changesReg" left="8%" top="11%" width="120px" height="30px" zIndex="4"/>
         </regionBase>
         <descriptorBase>
+            <descriptor id="cliqueDesc" region="cliqueReg" focusIndex="1" focusBorderColor="yellow" focusBorderWidth="10"/>
+            <descriptor id="finalizarDesc" region="finalizarReg" focusIndex="1" focusBorderColor="yellow" focusBorderWidth="5"/>
+            <descriptor id="comercialBackgroundDesc" region="comercialBackgroundReg" />
+            <descriptor id="carrinhoBackgroundDesc" region="carrinhoBackgroundReg" />
             <descriptor id="backgroundDesc" region="backgroundReg" />
             <descriptor id="carneBackgroundDesc" region="carneBackgroundReg" />
             <descriptor id="vegetalBackgroundDesc" region="vegetalBackgroundReg" />
@@ -131,7 +139,11 @@
             <property name="add"/>
         </media>
         <media id="contador" src="./scripts/contador.lua"/>
-        <port id="entry" component="backgroundId" />
+        <port id="entry" component="comercialBackgroundId" />
+        <media id="cliqueId" src="./media/clique.mp4" descriptor="cliqueDesc" />
+        <media id="finalizarId" src="./media/finalizar.mp4" descriptor="finalizarDesc" />
+        <media id="comercialBackgroundId" src="./media/comercial.mp4" descriptor="comercialBackgroundDesc" />
+        <media id="carrinhoBackgroundId" src="./media/carrinho.mp4" descriptor="carrinhoBackgroundDesc" />
         <media id="backgroundId" src="./media/background.mp4" descriptor="backgroundDesc" />
         <media id="carneBackgroundId" src="./media/carnes.mp4" descriptor="carneBackgroundDesc" />
         <media id="vegetalBackgroundId" src="./media/vegetais.mp4"
@@ -221,7 +233,14 @@
         
         <!-- Links para exibição inicial -->
         <link xconnector="conn#onBeginStart">
-            <bind role="onBegin" component="backgroundId" />
+            <bind role="onBegin" component="comercialBackgroundId"/>
+            <bind role="start" component="cliqueId"/>
+        </link>
+        
+        
+        <link xconnector="conn#onSelectionStartStop">
+            <bind role="onSelection" component="cliqueId" />
+            <bind role="start" component="backgroundId" />
             <bind role="start" component="carneId" />
             <bind role="start" component="vegetalId" />
             <bind role="start" component="limpezaId" />
@@ -239,12 +258,18 @@
             <bind component="detergenteQuantity" role="start" />
             <bind component="esponjaQuantity" role="start" />
             <bind component="alcoolQuantity" role="start" />
+
+            <bind role="stop" component="cliqueId"></bind>
+            <bind role="stop" component="comercialBackgroundId"></bind>
         </link>
-     
+        
+        <!-- 
         <link xconnector="conn#onEndStart">
             <bind component="backgroundId" role="onEnd" />
             <bind component="backgroundId" role="start" />
         </link>
+        -->
+
         <!-- AO SELECIONAR O MENU DE CARNES -->
         <link xconnector="conn#onSelectionSetStartStop">
             <bind component="carneId" role="onSelection" />
@@ -415,9 +440,11 @@
            
         </link>
         <!-- AO SELECIONAR O MENU DE FECHAR COMPRA -->
-        <link xconnector="conn#onSelectionStartStop">
+        <link xconnector="conn#onSelectionSetStartStop">
             <bind component="carrinhoId" role="onSelection" />
-            <bind component="backgroundId" role="start" />
+            <bind component="backgroundId" role="stop" />
+            <bind component="carrinhoBackgroundId" role="start" />
+            <bind component="finalizarId" role="start" />
             <bind component="voltarId" role="start" />
             <bind component="carneId" role="stop" />
             <bind component="vegetalId" role="stop" />
@@ -430,28 +457,69 @@
             <bind component="suinoId" role="stop" />
             <bind component="frangoId" role="stop" />
             <bind component="linguicaId" role="stop" />
-            <bind component="picanhaQuantity" role="stop" />
-            <bind component="suinoQuantity" role="stop" />
-            <bind component="frangoQuantity" role="stop" />
-            <bind component="linguicaQuantity" role="stop" />
             <!-- REMOVER COMPONENTES DO SUBMENU VEGETAIS -->
             <bind component="alfaceId" role="stop" />
             <bind component="cebolaId" role="stop" />
             <bind component="brocolisId" role="stop" />
             <bind component="cenouraId" role="stop" />
-            <bind component="alfaceQuantity" role="stop" />
-            <bind component="cebolaQuantity" role="stop" />
-            <bind component="brocolisQuantity" role="stop" />
-            <bind component="cenouraQuantity" role="stop" />
             <!-- REMOVER COMPONENTES DO SUBMENU LIMPEZA -->
             <bind component="cloroId" role="stop" />
             <bind component="detergenteId" role="stop" />
             <bind component="esponjaId" role="stop" />
             <bind component="alcoolId" role="stop" />
-            <bind component="cloroQuantity" role="stop" />
-            <bind component="detergenteQuantity" role="stop" />
-            <bind component="esponjaQuantity" role="stop" />
-            <bind component="alcoolQuantity" role="stop" />
+
+            <!--OCULTANDO AS QUANTIDADES-->
+
+            <bind component="suinoQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="picanhaQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="frangoQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="linguicaQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+                        <bind component="alfaceQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="cebolaQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="brocolisQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="cenouraQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+             <bind component="cloroQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="detergenteQuantity" role="set" interface="zIndex">
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="esponjaQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+            <bind component="alcoolQuantity" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+
+
+
         </link>
         <!-- AO COMPRAR UM ITEM-->
         <link xconnector="conn#onSelectionSet_var">
