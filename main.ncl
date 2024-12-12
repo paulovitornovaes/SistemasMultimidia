@@ -8,6 +8,7 @@
         <regionBase>
             <region id="cliqueReg" left="80%" top="80%" width="10%" height="10%" zIndex="3"/>
             <region id="finalizarReg" left="33%" top="45%" width="40%" height="30%" zIndex="3"/>
+            <region id="finalizarBackgroundReg" width="100%" height="100%" zIndex="2"/>
             <region id="comercialBackgroundReg" width="100%" height="100%" zIndex="2"/>
             <region id="carrinhoBackgroundReg" width="100%" height="100%" zIndex="2"/>
             <region id="backgroundReg"  width="100%" height="100%" zIndex="2">
@@ -70,6 +71,7 @@
         <descriptorBase>
             <descriptor id="cliqueDesc" region="cliqueReg" focusIndex="1" focusBorderColor="yellow" focusBorderWidth="10"/>
             <descriptor id="finalizarDesc" region="finalizarReg" focusIndex="1" focusBorderColor="yellow" focusBorderWidth="5"/>
+            <descriptor id="finalizarBackgroundDesc" region="finalizarBackgroundReg" />
             <descriptor id="comercialBackgroundDesc" region="comercialBackgroundReg" />
             <descriptor id="carrinhoBackgroundDesc" region="carrinhoBackgroundReg" />
             <descriptor id="backgroundDesc" region="backgroundReg" />
@@ -138,11 +140,15 @@
             <area id="print" label="fim"/>
             <property name="add"/>
         </media>
+        <media id="ambience" src="./media/music/ambience.mp3">
+            <property name="soundLevel" value="0.5"/>
+        </media>
         <media id="contador" src="./scripts/contador.lua"/>
         <port id="entry" component="comercialBackgroundId" />
         <media id="cliqueId" src="./media/clique.mp4" descriptor="cliqueDesc" />
         <media id="finalizarId" src="./media/finalizar.mp4" descriptor="finalizarDesc" />
         <media id="comercialBackgroundId" src="./media/comercial.mp4" descriptor="comercialBackgroundDesc" />
+        <media id="finalizarBackgroundId" src="./media/finalizado.mp4" descriptor="finalizarBackgroundDesc" />
         <media id="carrinhoBackgroundId" src="./media/carrinho.mp4" descriptor="carrinhoBackgroundDesc" />
         <media id="backgroundId" src="./media/background.mp4" descriptor="backgroundDesc" />
         <media id="carneBackgroundId" src="./media/carnes.mp4" descriptor="carneBackgroundDesc" />
@@ -232,9 +238,12 @@
 
         
         <!-- Links para exibição inicial -->
-        <link xconnector="conn#onBeginStart">
+        <link xconnector="conn#onBeginStart_delay">
             <bind role="onBegin" component="comercialBackgroundId"/>
-            <bind role="start" component="cliqueId"/>
+            <bind role="start" component="cliqueId">
+                <bindParam name="delay" value="45s"/>
+            </bind>
+            <bind role="start" component="ambience"/>
         </link>
         
         
@@ -519,6 +528,18 @@
             </bind>
 
 
+
+        </link>
+        <link xconnector="conn#onSelectionSetStartStop">
+            <bind component="finalizarId" role="onSelection" />
+            <bind component="carrinhoBackgroundId" role="stop" />
+            <bind component="voltarId" role="stop" />
+            <bind component="finalizarId" role="stop" />
+            <bind component="carrinhoId" role="stop" />
+            <bind component="changes" role="set" interface="zIndex" >
+                <bindParam name="var" value="1" />
+            </bind>
+            <bind component="finalizarBackgroundId" role="start" />
 
         </link>
         <!-- AO COMPRAR UM ITEM-->
